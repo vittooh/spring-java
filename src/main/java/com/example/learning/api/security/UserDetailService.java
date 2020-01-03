@@ -3,7 +3,6 @@ package com.example.learning.api.security;
 import com.example.learning.api.usuario.Usuario;
 import com.example.learning.api.usuario.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,6 +21,8 @@ public class UserDetailService implements UserDetailsService {
 
         if (u == null) throw new UsernameNotFoundException("Usuario não encontrado !!  " + s);
 
-        return User.withUsername(u.getUser()).password(u.getPassword()).build();
+        return u;
     }
+
+
 }

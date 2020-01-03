@@ -13,6 +13,7 @@ class LearningApplicationTests {
 
 
         System.out.println(b.encode("teste123"));
+        System.out.println(b.encode("teste123"));
     }
 
 }

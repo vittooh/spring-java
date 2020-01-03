@@ -2,6 +2,7 @@ package com.example.learning.api.carro;
 
 import com.example.learning.api.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class CarroController {
 
 
     @PostMapping
+    @Secured({"ADMIN"})
     public CarroDto create(@RequestBody CarroDto carroDto) {
         return carroService.create(new Carro(null, CarroTipo.getEnum(carroDto.tipo), carroDto.nome));
     }
