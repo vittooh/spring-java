@@ -16,7 +16,6 @@ public class CarroController {
 
 
     @PostMapping
-    @Secured({"ADMIN"})
     public CarroDto create(@RequestBody CarroDto carroDto) {
         return carroService.create(new Carro(null, CarroTipo.getEnum(carroDto.tipo), carroDto.nome));
     }
